@@ -1,0 +1,31 @@
+// @import 'variables';
+
+
+
+.flex-end {
+  // padding: 10px 0;
+  // display: flex;
+  // display: block;
+  margin-left: auto;
+  // background-color: pink;
+  // align-content:end;
+  // justify-content: flex-end;
+}
+
+/* stroke */
+
+::ng-deep  .last-login-style{
+ padding-right: 15px;
+ padding-top: 22px;
+ font-size: 11px;
+}
+
+
+.p-ripple {
+  text-decoration: none !important;
+  .p-menuitem-icon {
+    text-decoration: none !important
+}
+  }
+  
+a:hover, a:focus { text-decoration: none;}

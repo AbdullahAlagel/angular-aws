@@ -1,5 +1,29 @@
 {
   "ar": "العربية",
-  "en": "English"
-
+  "en": "إنجليزي",
+  "verasion":"نسخة",
+  "all.rights":"جميغ الحقوق محفوظة © 2023",
+  "support":"فريق الدعم",
+  "home.page":"القائمة الرئيسية",
+  "course.page":"الكورسات",
+  "user.page":"المستخدمين",
+  "student.page":"الطلاب",
+  "user.header.name":"مرحبا",
+  "ADD_EDIT_COURSE":"تعديل بيانات الكورس",
+  "FIND_COURSES":"اضافات كورس",
+  "ADD_USER":"اضافات مستخدم",
+  "LIST_USER":"عرض المستخدمين",
+  "ADD_EDIT_STUDENT":"تعديل بيانات الطلاب",
+  "FIND_STUDENTS":"البحث عن الطلاب",
+  "language":"العربية",
+  "icon.home.page":"pi pi-home",
+  "icon.course.page":"bi bi-book-half",
+  "icon.user.page":"pi pi-fw pi-user",
+  "icon.student.page":"pi pi-user-minus",
+  "icon.ADD_EDIT_COURSE":"bi bi-journal-plus",
+  "icon.FIND_COURSES":"bi bi-book",
+  "icon.ADD_USER":"bi bi-person-add",
+  "icon.LIST_USER":"bi bi-people-fill",
+  "icon.ADD_EDIT_STUDENT":"pi pi-user-plus",
+  "icon.FIND_STUDENTS":"pi pi-users"
 }

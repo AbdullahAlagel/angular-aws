@@ -1,3 +1,4 @@
+
 <p-card header="Student Information" role="region" class="d-flex justify-content-center m-5">
     <p class="m-0 font-weight-bold">
         Student-generated paragraph summaries require students to pause after reading each paragraph of text in order to write a sentence or less summary in their own words. Paragraph summaries appear to meet the demands of the information-processing theory of learning.
@@ -5,20 +6,35 @@
     <form [formGroup]="student" (ngSubmit)="submit()">
         <div class="form-group">
           <label class="text-uppercase font-weight-bold py-2">First Name</label>
-          <input type="text" class="form-control"   formControlName="firstName" aria-describedby="emailHelp" placeholder="Enter Your First Name">
-          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          <input type="text" class="form-control"   formControlName="firstName" aria-describedby="emailHelp" placeholder="Enter Your First Name"
+          [ngClass]="{
+            'is-invalid': submitted && studentInput.firstName.errors
+          }">
+          <small *ngIf="submitted && studentInput.firstName.errors" style="color: red;font-size: 16px;">First Name is Required</small>
         </div>
         <div class="form-group">
           <label  class="text-uppercase font-weight-bold py-2">Last Name </label>
-          <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Your Last Name ">
+          <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Your Last Name "
+          [ngClass]="{
+            'is-invalid': submitted && studentInput.lastName.errors
+          }">
+          <small *ngIf="submitted && studentInput.lastName.errors" style="color: red;font-size: 16px;">Last Name is Required</small>
         </div>
         <div class="form-group">
             <label  class="text-uppercase font-weight-bold py-2">Address </label>
-            <input type="text" class="form-control" formControlName="address" placeholder="Enter Your Address ">
+            <input type="text" class="form-control" formControlName="address" placeholder="Enter Your Address "
+            [ngClass]="{
+              'is-invalid': submitted && studentInput.address.errors
+            }">
+            <small *ngIf="submitted && studentInput.address.errors" style="color: red;font-size: 16px;">Address is Required</small>
           </div>
           <div class="form-group">
             <label  class="text-uppercase font-weight-bold py-2">Phone </label>
-            <input type="text" class="form-control" formControlName="phone" placeholder="Enter Your Phone ">
+            <input type="text" class="form-control" formControlName="phone" placeholder="Enter Your Phone "
+            [ngClass]="{
+              'is-invalid': submitted && studentInput.phone.errors
+            }">
+            <small *ngIf="submitted && studentInput.phone.errors" style="color: red;font-size: 16px;">Phone is Required</small>
           </div>
         <!-- <div class="form-check">
           <input type="checkbox" class="form-check-input"  formControlName="investigatorType"id="exampleCheck1">
@@ -31,3 +47,4 @@
       </form>
       <p-messages [(value)]="messages"> </p-messages>
 </p-card>
+<app-spinner [isSpinnerLoader]="!loading"></app-spinner>

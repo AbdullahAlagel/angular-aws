@@ -1,16 +1,22 @@
+
 <p-card class="card m-5">
+  
+ 
   <div
-    style="width: 50%; height: 500px"
+    style="width: 50%; height: 50%"
     class="d-flex justify-content-center align-items-center"
   >
-  
+ 
     <form style="width: 50%" [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+      <div class="justify-content-start ">
+        <img style="width: 250px; height: 250px" class="img-responsive"  alt="image" src="assets/images/myimage.jpg">
+         </div>
       <div class="form-group">
         <label class="p-2">Username</label>
         <input  type="text" formControlName="username" class="form-control" placeholder="Enter email" [ngClass]="{
-            'is-invalid': submitted  && userinput   
+            'is-invalid': submitted && userinput.username.errors
           }"/>
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+         <small *ngIf="submitted && userinput.username.errors" style="color: red;font-size: 16px;">Username is Required</small>
       </div>
       <div class="form-group">
         <label class="p-2">Password</label>
@@ -20,16 +26,17 @@
           class="form-control"
           placeholder="Enter Password"
           [ngClass]="{
-            'is-invalid': submitted  && userinput   
+            'is-invalid': submitted && userinput.password.errors
           }"
         />
+        <small *ngIf="submitted && userinput.password.errors" style="color: red;font-size: 16px;">Password is Required</small>
       </div>
       <div class="p-2">
-        <button type="submit" class="btn btn-primary"  [disabled]="loading">Login</button>
+        <button pButton pRipple class="round" type="submit" [disabled]="loading">Login</button>
       </div>
       <div>
         <p-messages [(value)]="message"  class= "inline-block text-nowrap" ></p-messages>
-        <label class="p-2">You Don't have Account ? <a href="#">sign in</a></label>
+        <label class="p-2">You Don't have Account ? <a routerLink="/sign-in">sign in</a></label>
       </div>
     </form>
   </div>

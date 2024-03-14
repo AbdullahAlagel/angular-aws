@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { take, tap } from 'rxjs/operators';
-import { LoginInfoOutput } from '../types/LoginInfoOutput';
+import { LoginInfoOutput, MenuItem } from '../types/LoginInfoOutput';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/shared/modules/user/user';
 import { environment } from 'src/environments/environment.prod';
@@ -30,7 +30,8 @@ export class AuthenticationService {
             resData.name,
             resData.token,
             resData.expirtionTime,
-            resData.lastLogin
+            resData.lastLogin,
+            resData.menuItem!
           );
         })
       );
@@ -42,7 +43,8 @@ export class AuthenticationService {
     name: string,
     token: string,
     expirtionTime: string,
-    lastLogin: string
+    lastLogin: string,
+    menuItem: MenuItem[]
   ) {
     const expirationDate = new Date(expirtionTime);
     const user = new User(
@@ -51,7 +53,8 @@ export class AuthenticationService {
       name,
       token,
       expirationDate,
-      new Date(lastLogin)
+      new Date(lastLogin),
+      menuItem
     );
     this.user.next(user);
     sessionStorage.setItem('userInfo', JSON.stringify(user));
@@ -66,7 +69,8 @@ export class AuthenticationService {
       userInfo.name,
       userInfo.token,
       new Date(userInfo.tokenExpirtionTime),
-      new Date(userInfo.lastLogin)
+      new Date(userInfo.lastLogin),
+      userInfo.menuItem
     );
     if (loadedUser.token) {
       this.user.next(loadedUser);
@@ -82,5 +86,14 @@ export class AuthenticationService {
     this.router.navigate(['/login']);
     sessionStorage.removeItem('userInfo');
 
+  }
+  signIn(username: string,email:string, password: string) {
+    return this.http
+      .post<string>(environment.apiBaseUrl + `api/v1/sign-in`, {
+        username,
+        email,
+        password
+      })
+      
   }
 }

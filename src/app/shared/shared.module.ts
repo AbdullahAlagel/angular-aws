@@ -6,24 +6,21 @@ import { NgPrimeNgModule } from "./primeng.module";
 
 
 
+
 @NgModule({
     // declare what we need here 
+    // we declare component that related to user 
     declarations: [],
     imports: [
       CommonModule,
       FormsModule,
       ReactiveFormsModule,
       NgPrimeNgModule
-    //   DCCTranslatorModule.forRoot({
-    //     defaultLang: 'ar',
-    //     storagePrefix: 'ferhado-language'
-    //   }),
     //   SvgIconModule
     ],
     providers: [],
     exports: [
       NgPrimeNgModule
-    //   DCCTranslatorModule, 
     //   SvgIconModule
     ]
   })

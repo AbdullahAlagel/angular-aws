@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Student } from '../../main/types/Student';
 import { StudentService } from 'src/app/core/services/student.service';
 import { Router } from '@angular/router';
+import { Student } from '../../main/types/Student';
 
 @Component({
   selector: 'app-search-student',
@@ -26,5 +26,8 @@ export class SearchStudentComponent {
     this.router.navigate(['/student/edit-student/'+id]);
   }
 
+  deleteStudent(id:number){
+    this.router.navigate(['/student/delete-student/'+id]);
+  }
   
 }

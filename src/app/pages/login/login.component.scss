@@ -1,0 +1,17 @@
+:host ::ng-deep  .round{
+    border-radius:20px;
+    border: none;
+    width: 150px;
+    box-shadow: none;
+    justify-content: center;
+    background-color: coral;
+    color: rgb(6, 7, 7);
+}
+
+:host ::ng-deep  .round:hover{
+    border-radius:20px;
+    border: none;
+    box-shadow: none;
+    background-color: coral;
+    color:rgb(6, 7, 7);
+}

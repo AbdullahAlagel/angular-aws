@@ -7,20 +7,20 @@ export interface LoginInfoOutput {
     lastLogin: string,
     expirtionTime: string,
     // permissions: string[]
-    // menuItem?: MenuItem[];
+    menuItem?: MenuItem[];
     // roleLevel: number
     // roleName: string
   }
-//   export interface MenuItem {
-//     pageTage: string,
-//     items: MenuItems[]
+  export interface MenuItem {
+    pageTage: string,
+    items: Items[]
   
-//   }
-//   export interface MenuItems {
-//     dispalyOrder?: number,
-//     displayTag?: string,
-//     parentDispalyOrder?: Number,
-//     parentDisplayTag?: string,
-//     url?: string
-//   }
+  }
+  export interface Items {
+    pageOrder?: number,
+    pageTag?: string,
+    permissionName?: string,
+    permissionTag?: string,
+    url?: string
+  }
   

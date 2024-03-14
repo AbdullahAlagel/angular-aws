@@ -23,7 +23,8 @@
         <td>{{ student.lastName }}</td>
         <td>{{ student.address }}</td>
         <td>{{ student.phone}}</td>
-        <td><a><i class="pi pi-pencil" (click)="editStudent(student.id)" style="color: rgb(0, 13, 128)"></i></a></td>
+        <td><a><i class="pi pi-pencil" (click)="editStudent(student.id)" style="color: rgb(34, 53, 226);cursor: pointer"></i></a></td>
+        <td><a><i class="pi pi-trash" (click)="deleteStudent(student.id)" style="color: rgb(230, 21, 21);cursor: pointer"></i></a></td>
        
       </tr>
     </ng-template>

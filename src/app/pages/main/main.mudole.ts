@@ -3,30 +3,23 @@ import { MainComponent } from "./main.component";
 import { CommonModule } from "@angular/common";
 import { MainRoutingModule } from "./main-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "src/app/shared/shared.module";
-import { LayoutComponent } from "../layout/layout.component";
+import { CoreModule } from "src/app/core/core.module";
+// import { CoreModule } from "src/app/core/core.module";
+// import { HeaderModule } from "../../core/_layout/header/header.mudole";
 
 
 @NgModule({
     imports: [
-      CommonModule,
+      // CommonModule,
       MainRoutingModule,
       ReactiveFormsModule,
-      HttpClientModule,
       SharedModule,
-      
+      CoreModule,
     ],
     declarations: [ // add component to call another component 
-      MainComponent,
-      LayoutComponent
+      MainComponent
       ],
-    providers: [
-    //   { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    //       { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-  
-          // provider used to create fake backend
-          // fakeBackendProvider
-    ],
+    providers: [],
   })
 export class MainModule {}

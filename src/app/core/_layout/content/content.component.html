@@ -1,0 +1,14 @@
+<div class="page__wrapper d-flex flex-column">
+    <app-header></app-header>
+    <main class=" flex-grow-1 d-flex position-relative" role="main">
+        <content class="d-flex  flex-grow-1 content-nav-BQ">
+            <section class="p-5 bg-blue shadow flex-grow-1">
+        <router-outlet></router-outlet>
+    </section>
+    </content>
+    </main>
+
+    <footer role="footer" class="page__footer mt-6">
+        <app-footer></app-footer>
+      </footer>
+</div>

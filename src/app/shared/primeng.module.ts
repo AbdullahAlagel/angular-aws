@@ -36,8 +36,15 @@ import { TagModule } from 'primeng/tag';
 // import { ChartModule } from 'primeng/chart';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ImageModule } from 'primeng/image';
-
+import { BadgeModule } from 'primeng/badge';
 import { PasswordModule } from 'primeng/password';
+import { BlockUIModule } from 'primeng/blockui';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
+import { MegaMenuModule } from 'primeng/megamenu';
+
 
 @NgModule({
     imports: [
@@ -77,7 +84,13 @@ import { PasswordModule } from 'primeng/password';
         SelectButtonModule,
     InputNumberModule,
     TagModule,
-    ImageModule
+    ImageModule,
+    BlockUIModule,
+    AvatarModule,AvatarGroupModule,
+    BadgeModule,
+    MenuModule,
+    MenubarModule,
+    MegaMenuModule
     ],
 
     exports: [
@@ -117,7 +130,12 @@ import { PasswordModule } from 'primeng/password';
       InputNumberModule,
       TagModule,
       SelectButtonModule,
-      ImageModule
+      ImageModule,
+      BlockUIModule, AvatarModule,AvatarGroupModule,
+      BadgeModule,
+      MenuModule,
+      MenubarModule,
+      MegaMenuModule
     ],
 })
 export class NgPrimeNgModule { }
