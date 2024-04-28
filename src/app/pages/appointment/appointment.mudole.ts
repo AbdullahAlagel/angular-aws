@@ -3,24 +3,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MessageService } from 'primeng/api';
 import { SpinnerModule } from '../spinner/spinner.mudole';
-
-import { UsersRoutingModule } from './users-routing.module';
-
-import { UserComponent } from './user-page/user.component';
-import { ListUsersComponent } from './list-users/list-users.component';
+import { AppointmentRoutingModule } from './appointment-routing.module';
+import { SearchAppointmentComponent } from './search-appointment/search-appointment.component';
+import { AddEditAppointmentComponent } from './add-edit-appointment/add-edit-appointment.component';
 
 @NgModule({
   imports: [
-    UsersRoutingModule,
+    AppointmentRoutingModule,
     ReactiveFormsModule,
     SharedModule,
+    // HeaderModule,
     SpinnerModule,
   ],
   declarations: [
     // add component to call another component
-    UserComponent,
-    ListUsersComponent
+    SearchAppointmentComponent,
+    AddEditAppointmentComponent,
   ],
   providers: [MessageService],
 })
-export class UserstModule {}
+export class AppointmentModule {}

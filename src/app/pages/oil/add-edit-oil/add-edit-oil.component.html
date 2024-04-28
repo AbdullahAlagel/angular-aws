@@ -1,0 +1,90 @@
+
+
+<p-card header="Oil Information" role="region" class="d-flex justify-content-center m-5">
+    <p class="m-0 font-weight-bold">
+        Student-generated paragraph summaries require students to pause after reading each paragraph of text in order to write a sentence or less summary in their own words. Paragraph summaries appear to meet the demands of the information-processing theory of learning.
+    </p>
+    <form [formGroup]="oil" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label class="text-uppercase font-weight-bold py-2">Oil Name arabic</label>
+          <input type="text" class="form-control"   
+          formControlName="oilNameEn" 
+          aria-describedby="emailHelp" 
+          placeholder="Enter Oil Name"
+          [ngClass]="{
+            'is-invalid': submitted && oilInput.oilNameEn.errors
+          }">
+          <small *ngIf="submitted && oilInput.oilNameEn.errors" style="color: red;font-size: 16px;">Oil Name arabic is Required</small>
+        </div>
+        <div class="form-group">
+          <label  class="text-uppercase font-weight-bold py-2">Oil Name English </label>
+          <input type="text" class="form-control" formControlName="oilNameAr" placeholder="Oil Name English "
+          [ngClass]="{
+            'is-invalid': submitted && oilInput.oilNameAr.errors
+          }">
+          <small *ngIf="submitted && oilInput.oilNameAr.errors" style="color: red;font-size: 16px;">Oil Name English is Required</small>
+        </div>
+        <div class="form-group">
+            <label  class="text-uppercase font-weight-bold py-2">Oil Description </label>
+            <input type="text" class="form-control" formControlName="oilDesc" placeholder="Oil Description "
+            [ngClass]="{
+              'is-invalid': submitted && oilInput.oilDesc.errors
+            }">
+            <small *ngIf="submitted && oilInput.oilDesc.errors" style="color: red;font-size: 16px;">Address is Required</small>
+          </div>
+          <div class="form-group">
+            <label  class="text-uppercase font-weight-bold py-2">Oil Type </label>
+            <input type="text" class="form-control" formControlName="oilType" placeholder="Enter Oil Type "
+            [ngClass]="{
+              'is-invalid': submitted && oilInput.oilType.errors
+            }">
+            <small *ngIf="submitted && oilInput.oilType.errors" style="color: red;font-size: 16px;">Oil Type is Required</small>
+          </div>
+          <div class="form-group">
+            <label  class="text-uppercase font-weight-bold py-2">Oil Price </label>
+            <input type="text" class="form-control" formControlName="oilPrice" placeholder="Enter Oil Price  "
+            [ngClass]="{
+              'is-invalid': submitted && oilInput.oilPrice.errors
+            }">
+            <small *ngIf="submitted && oilInput.oilPrice.errors" style="color: red;font-size: 16px;">Oil Price  is Required</small>
+          </div>
+          
+          <div class="card flex justify-content-center">
+            <p-toast></p-toast>
+            <p-fileUpload
+              cancelLabel="اللغاء"
+              chooseLabel="اختيار ملف"
+              uploadLabel="رفع ملف"
+              invalidFileTypeMessageSummary="ش"
+              invalidFileLimitMessageSummary="خطاء في رفع الملف , "
+              invalidFileLimitMessageDetail="لقد وصلت الحد الاقصى من الملفات"
+              name="demo[]"
+              [customUpload]="true"
+              (onSelect)="onSelection($event)"
+              (uploadHandler)="myUploader($event)"
+              [multiple]="true"
+              accept="image/*"
+              [maxFileSize]="1000000"
+              (onClear)="onClear()"
+              (onRemove)="onRemoval($event)"
+            >
+              <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length > 0">
+                  <li *ngFor="let file of uploadedFiles">
+                    {{ file.name }} - {{ file.size }} bytes
+                  </li>
+                </ul>
+              </ng-template>
+            </p-fileUpload>
+          </div>
+          <!-- fileLimit="uploadedFiles.length===4 : 4?2" -->
+
+        
+        <div class="p-2">
+             <button  pButton pRipple  class="p-button-success " type="submit"  label="Submit"></button >
+             <p-button  [routerLink]="['/main']" class="px-3" routerLinkActive="router-link-active" label="Back"></p-button >
+        </div>
+      </form>
+      <p-messages [(value)]="messages"> </p-messages>
+</p-card>
+<app-spinner [isSpinnerLoader]="!loading"></app-spinner>

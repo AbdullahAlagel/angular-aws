@@ -1,26 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminUserComponent } from './admin-user/admin-user.component';
-import { StudentUserComponent } from './student-user/student-user.component';
-import { TeacherUserComponent } from './teacher-user/teacher-user.component';
+import { UserComponent } from './user-page/user.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 
 const routes: Routes = [
   {
-    path: 'admin-user',
-    component: AdminUserComponent,
+    path: 'add-edit-user',
+    component: UserComponent,
     children: []
   },
   {
-    path: 'student-user',
-    component: StudentUserComponent,
+    path: 'add-edit-user/:id',
+    component: UserComponent,
     children: []
-  },
-  {
-    path: 'teacher-user',
-    component: TeacherUserComponent,
-    children: []
-  },
+  },  
   {
     path: 'list-user',
     component: ListUsersComponent,

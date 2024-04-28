@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { MainComponent } from './pages/main/main.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { StudentComponent } from './pages/student/student/student.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ContentComponent } from './core/_layout';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
@@ -43,14 +41,14 @@ const routes: Routes = [
           import('./pages/main/main.mudole').then((m) => m.MainModule),
       },
       {
-        path: 'student',
+        path: 'oil',
         loadChildren: () =>
-          import('./pages/student/student.mudole').then((m) => m.StudentModule),
+          import('./pages/oil/oil.mudole').then((m) => m.OilModule),
       },
       {
-        path: '',
+        path: 'appointment',
         loadChildren: () =>
-          import('./pages/course/course.mudole').then((m) => m.CourseModule),
+          import('./pages/appointment/appointment.mudole').then((m) => m.AppointmentModule),
       },
       {
         path: '',

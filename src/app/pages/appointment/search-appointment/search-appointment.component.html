@@ -1,0 +1,31 @@
+<p-table [value]="timeBooked" [tableStyle]="{'min-width': '60rem'}">
+    <!-- <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            Products
+            <p-button icon="pi pi-refresh"></p-button>
+        </div>
+    </ng-template> -->
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Appointment Time</th>
+            <th>Appointment Date</th>
+            <th>City</th>
+            <th>log Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-timeBooked>
+        <tr>
+            <td>{{timeBooked.appointmentTime}}</td>
+            <td>{{timeBooked.appointmentDate}}</td>
+            <td>{{timeBooked.city}}</td>
+            <td>{{timeBooked.logTime}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            In total there are {{timeBooked ? timeBooked.length : 0 }} products.
+        </div>
+    </ng-template>
+</p-table>
