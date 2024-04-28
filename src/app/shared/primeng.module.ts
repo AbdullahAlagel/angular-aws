@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DataViewModule } from 'primeng/dataview';
+
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -44,8 +44,6 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { MegaMenuModule } from 'primeng/megamenu';
-import { RatingModule } from 'primeng/rating';
-
 
 
 @NgModule({
@@ -92,9 +90,7 @@ import { RatingModule } from 'primeng/rating';
     BadgeModule,
     MenuModule,
     MenubarModule,
-    MegaMenuModule,
-    DataViewModule,
-    RatingModule
+    MegaMenuModule
     ],
 
     exports: [
@@ -139,9 +135,7 @@ import { RatingModule } from 'primeng/rating';
       BadgeModule,
       MenuModule,
       MenubarModule,
-      MegaMenuModule,
-      DataViewModule,
-      RatingModule
+      MegaMenuModule
     ],
 })
 export class NgPrimeNgModule { }

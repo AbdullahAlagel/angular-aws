@@ -14,11 +14,11 @@ export class HeaderComponent implements OnInit{
 
   items: MenuItem[] = [];
   item!: MenuItem;
-  profileInfo: MenuItem[]=[] ;
+  profileInfo: MenuItem[] | undefined;
   nestitem!: MenuItem;
   currentUser!: User;
   name: string | undefined;
-  language: MenuItem[] =[];
+  language: MenuItem[] | undefined;
 
   constructor(private authenticationService:AuthenticationService,private router: Router,
     private translateService:TranslateService) {

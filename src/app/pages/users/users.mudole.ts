@@ -6,7 +6,9 @@ import { SpinnerModule } from '../spinner/spinner.mudole';
 
 import { UsersRoutingModule } from './users-routing.module';
 
-import { UserComponent } from './user-page/user.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { StudentUserComponent } from './student-user/student-user.component';
+import { TeacherUserComponent } from './teacher-user/teacher-user.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ListUsersComponent } from './list-users/list-users.component';
   ],
   declarations: [
     // add component to call another component
-    UserComponent,
+    AdminUserComponent,
+    StudentUserComponent,
+    TeacherUserComponent,
     ListUsersComponent
   ],
   providers: [MessageService],

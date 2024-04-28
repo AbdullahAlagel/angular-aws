@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
-import { UsersOutput } from 'src/app/core/types/UsersOutput';
-import { environment } from 'src/environments/environment.prod';
+import { Users } from 'src/app/core/types/usersOutput';
 
 @Component({
   selector: 'app-list-users',
@@ -11,13 +10,14 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ListUsersComponent implements OnInit{
 
-  users: UsersOutput[]=[];
+  users: Users[]=[];
   
   constructor(private usersService: UserService,private router : Router){
 
   }
   
   ngOnInit() {
+    
     this.usersService.getAllUsers().subscribe((data) => {
        this.users=data 
        
@@ -25,12 +25,12 @@ export class ListUsersComponent implements OnInit{
 }
 
 
-editUser(id:number){
-  this.router.navigate(['/add-edit-user/'+id]);
+editUser(userId:number){
+
 }
 
-deleteUser(id:number){
-  this.router.navigate(['/delete-user/'+id]);
+deleteUser(userId:number){
+  
 }
 
 

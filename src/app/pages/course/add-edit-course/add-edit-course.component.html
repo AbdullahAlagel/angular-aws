@@ -1,0 +1,31 @@
+
+<p-card header="Course Information" role="region" class="d-flex justify-content-center m-5">
+  
+    <p class="m-0 font-weight-bold">
+       Course demands of the information-processing.
+    </p>
+    <form [formGroup]="courseInput" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label class="text-uppercase font-weight-bold py-2">Course Name</label>
+          <input type="text" class="form-control"   formControlName="courseName" aria-describedby="emailHelp" placeholder="Enter Course Name"
+          [ngClass]="{
+            'is-invalid': submitted && courseIn.courseName.errors
+          }">
+          <small *ngIf="submitted && courseIn.courseName.errors" style="color: red;font-size: 16px;">Course Name is Required</small>
+        </div>
+        <div class="form-group">
+          <label  class="text-uppercase font-weight-bold py-2">Insert Date</label>
+          <input type="text" class="form-control" formControlName="insertDate" placeholder="Enter Date "
+          [ngClass]="{
+            'is-invalid': submitted && courseIn.insertDate.errors
+          }">
+          <small *ngIf="submitted && courseIn.insertDate.errors" style="color: red;font-size: 16px;">Inserted Date is Required</small>
+        </div>
+        <div class="p-2">
+             <button  pButton pRipple  class="p-button-success " type="submit"  label="Save"></button >
+             <p-button  [routerLink]="['/main']" class="px-3" routerLinkActive="router-link-active" label="Back"></p-button >
+        </div>
+      </form>
+      <p-messages [(value)]="messages"> </p-messages>
+</p-card>
+<app-spinner [isSpinnerLoader]="!loading"></app-spinner>

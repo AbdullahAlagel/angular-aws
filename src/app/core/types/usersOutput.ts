@@ -1,9 +1,8 @@
-export interface UsersOutput{
+export interface Users{
     id:number,
     type:number
     userId:string
     email:string,
-    mobile:string,
     username:string
     userCreationDate:string
     lastLoginTime:string

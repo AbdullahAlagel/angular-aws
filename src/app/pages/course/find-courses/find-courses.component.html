@@ -1,0 +1,32 @@
+
+<div class="card m-3">
+    <p-table
+      class="p-3"
+      [value]="courses"
+      [tableStyle]="{ 'min-width': '80rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>id</th>
+          <th>Course Name</th>
+          <th>Insert Date</th>
+          <th>Record Activity</th>
+          <th>Update Course</th>
+          <th>Delete Course</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-courses>
+        <tr>
+          <td>{{ courses.id }}</td>
+          <td>{{ courses.courseName }}</td>
+          <td>{{ courses.insertDate }}</td>
+          <td ngClass="{ courses.recordActivity==='active' ? 'red':'blue'}">{{ courses.recordActivity }}</td>
+          <!-- <td>{{ courses.phone}}</td> -->
+          <td><a><i class="pi pi-pencil" (click)="editCourse(courses.id)" style="color: rgb(34, 53, 226)"></i></a></td>
+          <td><a><i class="pi pi-trash" (click)="deleteCourse(courses.id)" style="color: rgb(230, 21, 21)"></i></a></td>
+         
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <p-button  [routerLink]="['/main']" routerLinkActive="router-link-active" label="Back"></p-button>
